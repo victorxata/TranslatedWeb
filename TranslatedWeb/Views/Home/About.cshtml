@@ -1,0 +1,35 @@
+﻿@using Resources
+@{
+    ViewBag.Title = @Global.ABOUT;
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>@ViewBag.Message</h2>
+</hgroup>
+
+<article>
+    <p>
+        @Global.USETHISAREA
+    </p>
+
+    <p>
+        @Global.USETHISAREA
+    </p>
+
+    <p>
+        @Global.USETHISAREA
+    </p>
+</article>
+
+<aside>
+    <h3>@Global.ASIDETITLE</h3>
+    <p>
+        @Global.USETHISAREA
+    </p>
+    <ul>
+        <li>@Html.ActionLink(@Global.HOME, "Index", "Home")</li>
+        <li>@Html.ActionLink(@Global.ABOUT, "About", "Home")</li>
+        <li>@Html.ActionLink(@Global.CONTACT, "Contact", "Home")</li>
+    </ul>
+</aside>

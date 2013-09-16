@@ -1,0 +1,20 @@
+﻿@using Resources
+@if (Request.IsAuthenticated) {
+    <text>
+        Hello, @Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })!
+        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
+            @Html.AntiForgeryToken()
+            <a href="javascript:document.getElementById('logoutForm').submit()">@Global.LOGOFF</a>
+        }
+    </text>
+} else {
+    <ul>
+        <li>@Html.ActionLink(@Global.REGISTER, "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink(@Global.LOGIN, "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+
+        <li>@Html.ActionLink(@Global.LANGENGLISH, "ChangeLanguage", "Home", new { id = 0 }, null)</li>
+        <li>@Html.ActionLink(@Global.LANGSPANISH, "ChangeLanguage", "Home", new { id = 1 }, null)</li>
+        <li>@Html.ActionLink(@Global.LANGCHINESE, "ChangeLanguage", "Home", new { id = 2 }, null)</li>
+        
+    </ul>
+}
